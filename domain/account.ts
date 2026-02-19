@@ -5,6 +5,15 @@ export interface Account {
 }
 
 export enum MarketplaceCode {
-  WB = 'WB',
-  OZON = 'OZON',
+  WB = "WB",
+  OZON = "OZON",
+}
+
+export function getMarketplaceLabel(marketplaceCode: MarketplaceCode) {
+  switch (marketplaceCode) {
+    case MarketplaceCode.WB:
+      return "Wildberries";
+    case MarketplaceCode.OZON:
+      return "Ozon";
+  }
 }

@@ -4,21 +4,15 @@ import SelectAccountForm from "@/feature/selectAccount/SelectAccountForm";
 import Header from "@/shared/ui/Header";
 
 export default async function SelectCabinetPage() {
-    const user = await getUser();
-    console.log("user", user)
-    return (
-        <UserProvider initialUser={user}>
-            <Header />
-            <div className="p-6 w-68 bg-white border border-slate-200 rounded-xl">
-                <h3 className="text-lg font-semibold">
-                    Выберите кабинет
-                </h3>
-                <p className="text-sm font-normal">
-                    Вам доступны следующие аккаунты
-                </p>
-
-                <SelectAccountForm />
-            </div>
-        </UserProvider>
-    );
+  const user = await getUser();
+  return (
+    <UserProvider initialUser={user}>
+      <div className="flex flex-col h-screen items-center">
+        <Header />
+        <main className="flex-grow flex items-center">
+          <SelectAccountForm />
+        </main>
+      </div>
+    </UserProvider>
+  );
 }
